@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<a href="app.html" id="link">Click to open</a>
+<script>
+var strWindowFeatures = "menubar=no,location=no,resizable=no,scrollbars=no,status=no,width=480,height=852";
+var el = document.getElementById("link").addEventListener("click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log('hello');
+    window.open("app.html", "Data Collection Prototype", strWindowFeatures);
+});
+
+console.log(el)
+</script>

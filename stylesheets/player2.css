@@ -1,0 +1,154 @@
+/*
+body { -webkit-animation: bugfix infinite 1s; }
+@-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
+
+
+body,ul,li {
+	padding:0;
+	margin:0;
+	border:0;
+
+}
+*/
+/*
+body {
+	-webkit-user-select:none;
+    -webkit-text-size-adjust:none;
+	font-family:helvetica;
+	//	padding-bottom:44px;	//	This prevents the scroller to lock if the user swipes down outside of the screen. NOT needed if in home screen mode and on Android.
+								 	
+}
+*/
+
+
+#appModeNote {
+	background-color: #333333 ;
+	border-top: 5px solid #000000 ;
+	bottom: 0px ;
+	color: #F0F0F0 ;
+	display: none ;
+	font-family: helvetica ;
+	left: 0px ;
+	padding: 10px 0px 10px 0px ;
+	position: fixed ;
+	text-align: center ;
+	width: 100% ;
+	}
+
+#appModeNote em {
+	display: block ;
+	font-size: 20px ;
+	font-weight: bold ;
+	line-height: 26px ;
+	}
+
+#appModeNote span {
+	display: block ;
+	font-size: 14px ;
+	line-height: 20px ;
+	}
+	
+#log {
+	display: none;
+	left: 0px ;
+	top: 0px;
+	position: fixed ;
+}
+
+.hidden {
+	display: none;
+}
+
+.ui-page.loadedFrom {
+	display: block;
+}
+
+.ui-page.loadedTo {
+	z-index: 999999;
+}
+
+
+#statusbar, #navigationbar {
+	background: transparent 0 0;
+	display: block;
+	h!eight: 20px;
+	width: 100%;
+	border: 0px none;
+	top: 0px;
+	position: absolute;
+	
+}
+
+#pio-printercanvas {
+	display: none;
+}
+
+#loader-wrapper {
+	background: none repeat scroll 0 0 rgba(0,0,0, 0.2);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: none;
+    z-index: 99999;
+    font-size: 11px;
+}
+
+#loader-wrapper #loader {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 140px; height: 140px;
+    margin: -70px 0 0 -70px;
+	background: url(/images/editor/loader.gif) center 30px no-repeat rgba(255, 255, 255, 0.8);
+    -moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	font-size: 17px; color: #666; line-height: 220px; text-align: center;
+}
+
+#loader img {
+	padding-bottom: 25px;
+}
+
+
+#loader img {
+    padding-bottom: 25px;
+}
+#loader span {
+    display: block;
+}    
+
+.pointer-events-none {
+	pointer-events: none;
+}
+
+
+/********** FROM device/index.cfm ****************/
+body .ui-page {-webkit-transform:translate3d(0,0,0);} /* FIX JQUERYMOBILE TRANSITION FLICKER BUG */
+
+/* MAKE CLICK AREA TRANSPARENT */
+.type-actionarea .inner-rec div {
+	background: none;
+}
+
+html {
+	background: transparent;
+}
+
+body {
+	background: white;
+}
+
+
+#dragarea { background: transparent; }
+
+.hide { display: none!important; }
+
+.ui-body-c {
+	background: none;
+}
+
+* {
+	outline: none;
+}

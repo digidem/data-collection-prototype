@@ -1,0 +1,308 @@
+/*********** CUSTOM ******************/
+@-webkit-keyframes donothing {
+    from {opacity: 1;}
+	to {opacity: 1;}
+}
+
+@-moz-keyframes donothing {
+    from { opacity: 1; }
+    to { opacity: 1; }
+}
+
+/*********** GO TO PAGE **************/
+/* slide down no fade */
+.slidedownnofade.out, .slidedownnofade.in {
+	-webkit-animation-timing-function: ease-out;
+	-webkit-animation-duration: 350ms;
+	-moz-animation-timing-function: ease-out;
+	-moz-animation-duration: 350ms;
+}
+
+.slidedownnofade.out {
+	-webkit-transform: translateY(100%);
+	-webkit-animation-name: slidedowntobottom;
+	-moz-transform: translateY(100%);
+	-moz-animation-name: slidedowntobottom;
+}
+
+.slidedownnofade.in {
+	-webkit-transform: translateY(0);
+	-webkit-animation-name: slideinfromtop;
+	-moz-transform: translateY(0);
+	-moz-animation-name: slideinfromtop;
+}
+
+@-webkit-keyframes slidedowntobottom {
+    from { -webkit-transform: translateY(0); }
+    to { -webkit-transform: translateY(100%); }
+}
+@-moz-keyframes slidedowntobottom {
+    from { -moz-transform: translateY(0); }
+    to { -moz-transform: translateY(100%); }
+}
+
+
+/* slide up no fade */
+.slideupnofade.out, .slideupnofade.in {
+	-webkit-animation-timing-function: ease-out;
+	-webkit-animation-duration: 350ms;
+	-moz-animation-timing-function: ease-out;
+	-moz-animation-duration: 350ms;
+}
+
+.slideupnofade.out {
+	-webkit-transform: translateY(-100%);
+	-webkit-animation-name: slideupfromtop;
+	-moz-transform: translateY(-100%);
+	-moz-animation-name: slideupfromtop;
+}
+.slideupnofade.in {
+	-webkit-transform: translateY(0);
+	-webkit-animation-name: slideinfrombottom;
+	-moz-transform: translateY(0);
+	-moz-animation-name: slideinfrombottom;
+}
+
+@-webkit-keyframes slideupfromtop {
+    from { -webkit-transform: translateY(0); }
+    to { -webkit-transform: translateY(-100%); }
+}
+
+/* pop no fade */
+.popnofade {
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+}
+
+.popnofade.out {
+	-webkit-animation-name: donothing;
+	-moz-animation-name: donothing;
+}
+
+.popnofade.in {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+ 	-webkit-animation-name: popin;
+	-moz-animation-name: popin;
+	-webkit-animation-duration: 350ms;
+	-moz-animation-duration: 350ms;
+}
+
+/* custom "none" no flicker in chrome */
+.customnone.out, .customnone.in {
+	-webkit-animation-duration: 1ms;
+	-moz-animation-duration: 1ms;
+}
+
+.customnone.out {
+	-webkit-transform: translateY(100%);
+	-webkit-animation-name: donothing;
+	-moz-transform: translateY(100%);
+	-moz-animation-name: donothing;
+}
+
+.customnone.in {
+	-webkit-transform: translateY(0);
+	-webkit-animation-name: donothing;
+	-moz-transform: translateY(0);
+	-moz-animation-name: donothing;
+}
+
+/********* OVERLAY LOAD ***********/
+.slidenofadeload.out, .slidebacknofadeload.out, .slidedownnofadeload.out, .slideupnofadeload.out, .popnofadeload.out, .fadenofadeload.out, .flipnofadeload.out, .turnnofadeload.out, .flownofadeload.out {
+	-webkit-animation-name: donothing;
+	-moz-animation-name: donothing;
+}
+
+.slidenofadeload.out, .slidenofadeload.in, .slidebacknofadeload.out, .slidebacknofadeload.in, .slidedownnofadeload.out, .slidedownnofadeload.in, .slideupnofadeload.out, .slideupnofadeload.in {
+	-webkit-animation-timing-function: ease-out;
+	-webkit-animation-duration: 350ms;
+	-moz-animation-timing-function: ease-out;
+	-moz-animation-duration: 350ms;
+}
+
+/* slide no fade overlay load */
+.slidenofadeload.in {
+	-webkit-transform: translateX(0);
+	-webkit-animation-name: slideinfromright;
+	-moz-transform: translateX(0);
+	-moz-animation-name: slideinfromright;
+}
+
+/* slideback no fade overlay load */
+.slidebacknofadeload.in {
+	-webkit-transform: translateX(0);
+	-webkit-animation-name: slideinfromleft;
+	-moz-transform: translateX(0);
+	-moz-animation-name: slideinfromleft;
+}
+
+/* slide down no fade overlay load */
+.slidedownnofadeload.in {
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-webkit-animation-name: slideinfromtop;
+	-moz-animation-name: slideinfromtop;
+}
+
+/* slide up no fade overlay load */
+.slideupnofadeload.in {
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-webkit-animation-name: slideinfrombottom;
+	-moz-animation-name: slideinfrombottom;
+}
+
+/* pop no fade overlay load */
+.popnofadeload.in {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-webkit-animation-name: popin;
+	-moz-animation-name: popin;
+}
+
+/* fade no fade overlay load */
+.fadenofadeload.in {
+	opacity: 1;
+	-webkit-animation-duration: 225ms;
+	-webkit-animation-name: fadein;
+	-moz-animation-duration: 225ms;
+	-moz-animation-name: fadein;
+}
+
+/* flip no fade overlay load */
+.flipnofadeload.in {
+	-webkit-animation-name: flipintoright;
+	-webkit-animation-duration: 225ms;
+	-moz-animation-name: flipintoright;
+	-moz-animation-duration: 225ms;
+}
+
+/* turn no fade overlay load */
+.turnnofadeload.in {
+	-webkit-animation-name: flipintoright;
+	-moz-animation-name: flipintoright;
+	-webkit-animation-duration: 250ms;
+	-moz-animation-duration: 250ms;
+}
+
+/* flow no fade overlay load */
+.flownofadeload.in {
+	-webkit-transform: translateX(0) scale(1);
+	-webkit-animation-name: flowinfromright;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-duration: 350ms;
+	-moz-transform: translateX(0) scale(1);
+	-moz-animation-name: flowinfromright;
+	-moz-animation-timing-function: ease;
+	-moz-animation-duration: 350ms;
+}
+
+
+
+
+
+/********* OVERLAY UNLOAD ***********/
+
+.slidenofadeunload.in, .slidebacknofadeunload.in, .slideupnofadeunload.in, .slidedownnofadeunload.in, .popnofadeunload.in, .fadenofadeunload.in, .flipnofadeunload.in, .turnnofadeunload.in, .flownofadeunload.in {
+	-webkit-animation-name: donothing;
+	-moz-animation-name: donothing;
+}
+
+.slidenofadeunload.out, .slidenofadeunload.in, .slidebacknofadeunload.out, .slidebacknofadeunload.in, .slideupnofadeunload.out, .slideupnofadeunload.in, .slidedownnofadeunload.out, .slidedownnofadeunload.in {
+	-webkit-animation-timing-function: ease-out;
+	-webkit-animation-duration: 350ms;
+	-moz-animation-timing-function: ease-out;
+	-moz-animation-duration: 350ms;
+}
+
+/* slide no fade overlay unload */
+.slidenofadeunload.out {
+	-webkit-transform: translateX(-100%);
+	-webkit-animation-name: slideouttoleft;
+	-moz-transform: translateX(-100%);
+	-moz-animation-name: slideouttoleft;
+}
+
+/* slideback no fade overlay unload */
+.slidebacknofadeunload.out {
+	-webkit-transform: translateX(100%);
+	-webkit-animation-name: slideouttoright;
+	-moz-transform: translateX(100%);
+	-moz-animation-name: slideouttoright;
+}
+
+/* slide up no fade overlay unload */
+.slideupnofadeunload.out {
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	-webkit-animation-name: slideouttotop;
+	-moz-animation-name: slideouttotop;
+}
+
+/* slide down no fade overlay unload */
+.slidedownnofadeunload.out {
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	-webkit-animation-name: slideouttobottom;
+	-moz-animation-name: slideouttobottom;
+}
+
+/* pop no fade overlay unload */
+.popnofadeunload.out {
+	-webkit-transform: scale(.8);
+	-moz-transform: scale(.8);
+	-webkit-animation-name: popout;
+	-moz-animation-name: popout;
+}
+
+/* fade no fade overlay unload */
+.fadenofadeunload.out {
+	opacity: 0;
+	-webkit-animation-duration: 125ms;
+	-webkit-animation-name: fadeout;
+	-moz-animation-duration: 125ms;
+	-moz-animation-name: fadeout;
+}
+
+/* flip no fade overlay unload */
+.flipnofadeunload.out {
+	-webkit-transform: rotateY(-90deg) scale(.9);
+	-webkit-animation-name: flipouttoleft;
+	-webkit-animation-duration: 175ms;
+	-moz-transform: rotateY(-90deg) scale(.9);
+	-moz-animation-name: flipouttoleft;
+	-moz-animation-duration: 175ms;
+}
+
+/* turn no fade overlay unload */
+.turnnofadeunload.out {
+	-webkit-transform: rotateY(-90deg) scale(.9);
+	-webkit-animation-name: flipouttoleft;
+	-webkit-animation-duration: 125ms;
+	-moz-transform: rotateY(-90deg) scale(.9);
+	-moz-animation-name: flipouttoleft;
+	-moz-animation-duration: 125ms;
+}
+
+/* flow no fade overlay unload */
+.flownofadeunload.out {
+	-webkit-transform: translateX(-100%) scale(.7);
+	-webkit-animation-name: flowouttoleft;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-duration: 350ms;
+	-moz-transform: translateX(-100%) scale(.7);
+	-moz-animation-name: flowouttoleft;
+	-moz-animation-timing-function: ease;
+	-moz-animation-duration: 350ms;
+}
+
+
+
+
+/********* OVERWRITES & FIXES ***********/
+
+.ui-mobile [data-role="page"], .ui-mobile [data-role="dialog"], .ui-page {
+	min-height: 100%;
+}
+

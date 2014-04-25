@@ -1,0 +1,439 @@
+
+
+
+<!doctype html>
+	<head> 
+		<meta charset="utf-8">
+
+		<title>Slide-in menu example - Proto.io</title>   
+
+			<meta name="HandheldFriendly" content="True">
+			<meta name="MobileOptimized" content="#width#"> 
+
+			
+			
+			
+			<meta name="viewport" content="width=device-width, minimum-scale=0.50, maximum-scale=0.50, initial-scale=0.50, user-scalable=no, target-densitydpi=device-dpi" /> 
+				<meta name="apple-mobile-web-app-capable" content="yes" />
+				
+			
+
+			<meta name="format-detection" content="telephone=no">
+			
+			
+			<link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/branding/apple-touch-icon-retina.png"> <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/branding/apple-touch-icon-ipad.png"/> <link rel="apple-touch-icon-precomposed" href="./assets/branding/apple-touch-icon.png"/> <link rel="shortcut icon" href="./assets/branding/apple-touch-icon.png"> 
+						
+				        <link href="./assets/branding/startup.png" media="(device-width: 320px)" rel="apple-touch-startup-image">
+				       
+				        
+				        <link href="./assets/branding/startup-retina.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+				        
+				        
+				        <link href="./assets/branding/startup-568.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+				        
+				        
+				        <link href="./assets/branding/startup-ipad.png" media="(device-width: 768px) and (orientation: portrait)" rel="apple-touch-startup-image">
+				        
+				        
+				        <link href="./assets/branding/startup-ipad-landscape.png" media="(device-width: 768px) and (orientation: landscape)" rel="apple-touch-startup-image">
+				        
+						
+				        <link href="./assets/branding/startup-ipad-retina.png" media="(device-width: 768px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+				        
+				        <link href="./assets/branding/startup-ipad-landscape-retina.png" media="(device-width: 768px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+					
+			<style>
+				body * {-webkit-text-size-adjust: 100%;}
+			</style>
+		<link rel="stylesheet" href="./stylesheets/jquery.mobile-1.3.2.min.css" /> <link rel="stylesheet" href="./stylesheets/jquery.mobile.custom.css" /> 
+
+		<meta http-equiv="cleartype" content="on"> 
+		
+		
+		
+			<link rel="stylesheet" href="./stylesheets/style.css" />
+			<script type="text/javascript" src="./scripts/modernizr-2.0.6.min.js"></script>
+					
+				<script src="./scripts/jquery-2.0.3.min.js"></script>
+				 <script src="./scripts/jquery-migrate-1.2.1.min.js"></script>
+				
+				<script type="text/javascript" src="./scripts/ThrowPropsPlugin.min.js?5.0.16"></script> 
+				<script type="text/javascript" src="./scripts/Draggable.min.js?5.0.16"></script> 
+				<script type="text/javascript" src="./scripts/TweenMax.min.js?5.0.16"></script> 
+				<script type="text/javascript" src="./scripts/CSSPlugin.min.js?5.0.16"></script> 
+
+				<script type="text/javascript" src="./scripts/jquery.json-2.2.min.js"></script> 
+				<script type="text/javascript" src="./scripts/iscroll-zoom.js"></script>
+				<script type="text/javascript" src="./scripts/jquery-ui-1.9.1.draggable.min.js"></script>
+				<script type="text/javascript" src="./scripts/cssGenerator.js"></script>
+				<link rel="stylesheet" href="./stylesheets/player2.css" />
+				
+				<script type="text/javascript" src="./scripts/jquery.ui.ipad.altfix.js"></script>
+				<script type="text/javascript" src="./scripts/jsondiffpatch.js"></script>
+				
+				<script type="text/javascript" src="./scripts/player2.min.js"></script>		
+				
+				<link type="text/css" href="./libraries/common/components.css" rel="Stylesheet" /> 	
+				<script type="text/javascript" src="./libraries/common/components.js"></script> 
+				
+				
+						<link type="text/css" href="./libraries/iphone_retina/components.css" rel="Stylesheet" /> 	
+						<script type="text/javascript" src="./libraries/iphone_retina/components.js"></script> 
+					
+						<link type="text/css" href="./libraries/icons/components.css" rel="Stylesheet" /> 	
+						<script type="text/javascript" src="./libraries/icons/components.js"></script> 
+					
+
+				<script type="text/javascript" src="./data/data.js"></script> 	
+				
+				<script src="./scripts/jquery.mobile-1.3.2.min.js"></script>
+				<script type="text/javascript" src="./scripts/swipeupdown.js"></script>
+				<script src="./scripts/jquery.mobile.custom.js"></script>
+				<script type="text/javascript" src="./scripts/jquery.transit.js"></script>
+				<script type="text/javascript" src="./scripts/jquery.hammer.min.js"></script>				
+					
+		<style>
+
+			body .ui-page {-webkit-transform:translate3d(0,0,0);} /* FIX JQUERYMOBILE TRANSITION FLICKER BUG */
+		
+			.ui-page { -webkit-backface-visibility: hidden; } /* FIX JQUERYMOBILE TRANSITION FLICKER BUG */
+			
+			.landscape, .landscape .ui-page {
+				min-height: 640px;
+			}
+			
+			.portrait, .portrait .ui-page {
+				min-height: 1096px;
+			}
+
+			/* MAKE CLICK AREA TRANSPARENT */
+			.type-actionarea .inner-rec div {
+				background: none;
+			}
+			
+			.type-actionarea .inner-rec div:before {
+				display: none;
+			}
+			
+			.type-animationtarget {
+				opacity: 0!important;
+				pointer-events: none;
+			}
+			
+			html {
+				background: transparent;
+			}
+			
+			
+			
+			#dragarea { background: transparent; }
+			
+			.hide { display: none!important; }
+			
+			.ui-body-c {
+				background: none;
+			}
+			
+			* {
+				outline: none;
+			}
+			
+			.ghost-component {
+				pointer-events: none;
+			}
+						
+			
+				#loader {
+					background-image: url(images/editor/loader.gif);
+				}
+			
+		</style>
+		
+			<script type="text/javascript">
+				var _orientation = window.innerWidth>window.innerHeight?"landscape":"portrait";
+				var _windoworientation = window.orientation;
+				
+				
+								
+				if (window.screen.height==568) { // iPhone 4 (iPhone5/iOS6)
+					
+					//document.querySelector("meta[name=viewport]").content="width=320.1";
+					document.querySelector("meta[name=viewport]").content="width=320.1, minimum-scale=0.50, maximum-scale=0.50, initial-scale=0.50, user-scalable=no, target-densitydpi=device-dpi";
+				}
+				
+					var sLinkedAssets = [];
+					
+
+				
+				
+
+				prx.url['account'] = 'https://digidem.proto.io';
+				prx.url['staticassets'] = 'https://s3.amazonaws.com/gallery.proto.io';
+				
+				
+				
+					prx.device = 'default';
+				
+				
+				prx.device_library = 'iphone_retina';				
+				prx.devices[prx.device] = {
+						name: prx.device
+						,caption: "iPhone 5 (640x1136)"
+						,defaultOrientation: 'portrait'
+						,portrait_applies: 1 //new
+						,portrait: [640,1136]
+						,landscape_applies: 1 //new
+						,landscape: [1136,640]
+						,allow_orientation_change: 1 //new
+						,statusbar_skin: 'shared' // new
+						,statusbarheightportrait: 40
+						,statusbarheightlandscape: 40	
+						,navigationbar_skin: 'default' //new
+						,navigationbarheightportrait: 0
+						,navigationbarheightlandscape: 0	
+						
+						,normalportrait: [640,1136]
+						,normallandscape: [1136,640]
+						//,device_uuid: ['f2b0a5a2-27e8-47b3-977a-cc21325d0d37']
+						,device_uuid: 'f2b0a5a2-27e8-47b3-977a-cc21325d0d37'
+										
+				}
+		
+				//log(prx.devices);
+				
+				//prx.mobilebrowser = false;
+				
+
+				prx.embed = 0;
+
+
+				
+				
+				
+		
+				
+				$(document).one("mobileinit", function(){
+				  $.mobile.allowCrossDomainPages = true;
+				  $.mobile.defaultHomeScroll = 0;
+				  $.mobile.ajaxEnabled = false;
+				  $.mobile.touchOverflowEnabled = true;
+				  $.mobile.defaultPageTransition = 'none';
+				  $.mobile.defaultDialogTransition = 'none';
+				  $.mobile.ignoreContentEnabled=true;
+					
+				  
+				  /*
+				  $.extend($.mobile, {
+					
+				  });
+				  */
+				});
+
+
+				
+				prx.filename = '832c72b0-fb52-4866-a771-0147d4e61f69';
+				prx.ron = '0'; // Reviewers LIVE PREVIEW is ON
+				prx.url.devices = 'https://static.proto.io/devices';
+				prx.save = 'false'; 
+		
+				prx.statusbar = '1';
+				prx.statusbarapplies = '1';		
+		
+				prx.navigationbar = '0';
+				prx.navigationbarapplies = '0';
+				
+				
+				prx.url.static = 'https://static.proto.io';
+				prx.vup = '1';
+				
+					prx.v = '0';				
+				
+				prx.rl = '1'; 
+				prx.s3b = 'digidem-41025-proto';
+				prx.projectid = '832c72b0-fb52-4866-a771-0147d4e61f69';
+				prx.initialpageid = false;
+				prx.deviceorientation = 'portrait';
+				prx.export2html = '1';
+				
+				 
+							
+					function getAssetUrl(asset) {
+						var assetType = asset.assetType;
+						var url = asset.url;
+						
+						if (typeof(asset.targetSrc) != "undefined") {
+							url =  './assets/' + asset.targetSrc;	
+						} else {
+							url =  './assets/' + url;
+						}
+						
+						//linked assets
+						if (asset.assetType == "project") {
+							if (typeof(sLinkedAssets["p832c72b0-fb52-4866-a771-0147d4e61f69_"+asset.fileId]) != "undefined") {	
+								url = sLinkedAssets["p832c72b0-fb52-4866-a771-0147d4e61f69_"+asset.fileId];
+							}
+						}
+						
+						if (asset.assetType == "account") {
+							if (typeof(sLinkedAssets["p_"+asset.fileId]) != "undefined") {	
+								url = sLinkedAssets["p_"+asset.fileId];
+							}
+						}	
+						 
+						return url;
+					}
+				
+				
+				
+				
+				
+				//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);	
+
+				$(document).ready(function(){
+
+					
+					
+					
+					
+					
+					
+					if ('standalone' in navigator && !navigator.standalone && (/iphone|ipod|ipad|android/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)) {
+						//prx.mobilebrowser = true;
+						_agents = navigator.userAgent.toLowerCase().match(/(android)/g); // Android					
+						if (!_agents) {
+							$('body').prepend("<style>.box { -webkit-backface-visibility: hidden; }</style>");
+						}
+					}
+
+					 
+					
+					
+							
+					$("[data-role=page]").focus(function(){ return false;}); // Fix for jQuery Mobile push to top on transition
+							
+			 		var _deviceOrientation = ($(window).width() < $(window).height()) ? "portrait" : "landscape";
+	
+					
+					// STATUSBAR = TOP BAR
+					if (prx.statusbarapplies) {
+						prx.allowstatusbar = true;
+					} else {
+						prx.allowstatusbar = false;										
+					}
+					
+					
+					if (prx.allowstatusbar) {
+						// CHECK STATUSBAR ON IOS
+						var _agents = navigator.userAgent.toLowerCase().match(/(iphone|ipod|ipad)/g); // iOS
+						if (_agents) {
+							var _standalone = window.navigator.standalone ? true:false;
+							if(_standalone) {
+								prx.allowstatusbar = false;
+							} else {
+						 		
+						 		
+						 		// if not fullscreen then disable statusbar
+						 		if(!($(window).width() == prx.devices[prx.device][_deviceOrientation][0] && $(window).height() == prx.devices[prx.device][_deviceOrientation][1])) {
+									prx.allowstatusbar = false;
+						 		}
+						 	}
+						}
+
+						// CHECK STATUSBAR ON ANDROID
+						try {
+							_agents = navigator.userAgent.toLowerCase().match(/(android)/g); // Android					
+							if (_agents) {
+								// if not fullscreen then disable statusbar						
+						 		if(!($(window).width() == prx.devices[prx.device][_deviceOrientation][0] && $(window).height() == prx.devices[prx.device][_deviceOrientation][1])) {
+									prx.allowstatusbar = false;
+						 		}
+							}
+						} catch(err) {alert(err)}
+					}
+					
+
+					
+					// NAVIGATION BAR = BOTTOM BAR
+					if (prx.navigationbarapplies) {
+						prx.allownavigationbar = true;
+					} else {
+						prx.allownavigationbar = false;										
+					}
+					
+							
+					var _agents = navigator.userAgent.toLowerCase().match(/(android)/g);
+					if (_agents) {
+						try {
+							if(!($(window).width() == prx.devices[prx.device][_deviceOrientation][0] && $(window).height() == prx.devices[prx.device][_deviceOrientation][1])) {
+								prx.allownavigationbar = false;
+					 		} 
+				 		} catch(err) {alert(err)}
+					}
+					
+					
+					
+					
+					$('#dragarea').css('width',$(window).width()+'px');
+					$('#dragarea').css('height',$(window).height()+'px');		
+					
+					$(window).resize(function() {
+						$('#dragarea').css('width',$(window).width()+'px');
+						$('#dragarea').css('height',$(window).height()+'px');		
+					})
+					
+
+										
+					
+					 
+					if (typeof(prx.xdata) != "undefined") { 
+						prx.xdata = $.toJSON(prx.xdata);
+					}
+					
+					prx.s3Links = {};
+					
+					prx.loadProject(prx.filename);
+					
+					//$('html').removeClass('min-width-320px min-width-480px min-width-768px min-width-768px min-width-1024px min-width-1024px');
+	
+					
+						MBP.hideUrlBar();
+					
+					
+					
+
+					
+					
+					
+				});	
+			</script>
+		
+	</head>
+	
+	<body oncontextmenu="return false;" class="player" style="overflow: hidden; width: 640px; height: 1096px;" id="mbd">
+
+		
+		
+		
+			<div id="dragarea" style="display:none;"></div>
+			<div id="statusbar"></div>
+		
+			<div data-role="page" id="p-2" data-id="2"></div> <div data-role="page" id="p-1" data-id="1"></div> <div data-role="page" id="p-5" data-id="5"></div> <div data-role="page" id="p-6" data-id="6"></div> <div data-role="page" id="p-7" data-id="7"></div> 
+			<div id="navigationbar"></div>
+			
+			
+			<div id="overlay" style="position: absolute; top:40px;left:0px;"></div> <div id="trash" style="position: absolute; left:0px; display: none;"></div>
+	
+			<div id="loader-wrapper">
+				<div id="loader">
+					<span>Loading...</span>
+				</div>
+			</div>
+
+
+		
+				<script type="text/javascript" src="./scripts/helper.js"></script>
+			
+
+	</body>	
+</html> 
